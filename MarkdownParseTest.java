@@ -61,9 +61,5 @@ public class MarkdownParseTest {
     }
 
     //dbfbijds
-    @Test
-    public void failTest() {
-        assertEquals(4, 1 + 1);
-    }
     
 }
