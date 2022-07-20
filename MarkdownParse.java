@@ -11,9 +11,10 @@ public class MarkdownParse {
     private int closeBracket;
     private int openParen;
     private int closeParen;
+    private ArrayList<String> toReturn = new ArrayList<>();
     
     public ArrayList<String> getLinks(String markdown) {
-        ArrayList<String> toReturn = new ArrayList<>();
+
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
@@ -24,9 +25,9 @@ public class MarkdownParse {
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
-
         return toReturn;
     }
+
     private void gatherIndices(String markdown, int currentIndex) {
         openBracket = markdown.indexOf("[", currentIndex);
         closeBracket = markdown.indexOf("]", openBracket);
